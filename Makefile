@@ -5,7 +5,8 @@ bindir = $(DESTDIR)/usr/bin
 
 .PHONY: all thirdparty xcode clean\
 librime librime-static install-librime uninstall-librime \
-release debug test install uninstall install-debug uninstall-debug
+release debug test install uninstall install-debug uninstall-debug \
+install-static uninstall-static
 
 all: release
 
@@ -63,6 +64,9 @@ debug:
 install:
 	cmake --build build --target install
 
+install-static:
+	cmake --build build-static --target install
+
 install-debug:
 	cmake --build debug --target install
 
@@ -71,6 +75,9 @@ uninstall:
 
 uninstall-debug:
 	cmake --build debug --target uninstall
+
+uninstall-static:
+	cmake --build build-static --target uninstall
 
 test: release
 	(cd build/test; ./rime_test)
