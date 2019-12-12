@@ -1,6 +1,9 @@
 set(CMAKE_USER_MAKE_RULES_OVERRIDE ${CMAKE_CURRENT_SOURCE_DIR}/cmake/c_flag_overrides.cmake)
 set(CMAKE_USER_MAKE_RULES_OVERRIDE_CXX ${CMAKE_CURRENT_SOURCE_DIR}/cmake/cxx_flag_overrides.cmake)
 
+set(BOOST_LIBRARYDIR /usr/lib)
+set(BOOST_INCLUDEDIR /usr/include/boost)
+
 project(rime)
 cmake_minimum_required(VERSION 2.8.11)
 
@@ -65,7 +68,7 @@ else()
   set(BOOST_COMPONENTS ${BOOST_COMPONENTS} signals)
 endif()
 
-find_package(Boost 1.46.0 REQUIRED COMPONENTS ${BOOST_COMPONENTS})
+find_package(Boost 1.66.0 REQUIRED COMPONENTS ${BOOST_COMPONENTS})
 if(Boost_FOUND)
   include_directories(${Boost_INCLUDE_DIRS})
   link_directories(${Boost_LIBRARY_DIRS})

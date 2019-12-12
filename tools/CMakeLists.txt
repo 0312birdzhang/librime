@@ -43,6 +43,8 @@ target_link_libraries(rime_deployer
 
 install(TARGETS rime_dict_manager DESTINATION ${BIN_INSTALL_DIR})
 install(TARGETS rime_deployer DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS rime_console DESTINATION ${BIN_INSTALL_DIR})
+install(TARGETS rime_api_console DESTINATION ${BIN_INSTALL_DIR})
 
 endif()
 
