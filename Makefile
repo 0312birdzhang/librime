@@ -30,6 +30,8 @@ uninstall-librime: uninstall
 
 librime-static:
 	cmake . -Bbuild-static \
+	-DBOOST_INCLUDEDIR=/usr/include/boost \
+	-DBOOST_LIBRARYDIR=/usr/lib
 	-DCMAKE_INSTALL_PREFIX=/usr \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DBUILD_STATIC=ON \
@@ -38,6 +40,8 @@ librime-static:
 
 release:
 	cmake . -Bbuild \
+	-DBOOST_INCLUDEDIR=/usr/include/boost \
+	-DBOOST_LIBRARYDIR=/usr/lib
 	-DCMAKE_INSTALL_PREFIX=/usr \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DBUILD_MERGED_PLUGINS=OFF
