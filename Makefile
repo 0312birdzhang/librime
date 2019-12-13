@@ -45,11 +45,12 @@ release:
 	cmake --build build
 
 merged-plugins:
-	cmake . -Bbuild \
+	cmake . -Bbuild-static \
 	-DCMAKE_INSTALL_PREFIX=/usr \
 	-DCMAKE_BUILD_TYPE=Release \
+	-DBUILD_SHARED_LIBS=OFF \
 	-DBUILD_MERGED_PLUGINS=ON
-	cmake --build build
+	cmake --build build-static
 
 debug:
 	cmake . -Bdebug \
